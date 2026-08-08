@@ -1,37 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechPlug.ng - All Network Codes & Tech Tips</title>
+  <title>ELIJAH | TECHPLUGSIES</title>
   <style>
-    body { font-family: Arial; background: #f0f8ff; margin: 0; padding: 20px; text-align: center; }
-    h1 { color: #0066cc; }
-    .card { background: white; padding: 20px; margin: 15px auto; border-radius: 10px; max-width: 400px; box-shadow: 0 2px 5px #ccc; }
+    body{font-family:Arial;text-align:center;padding:30px;background:#f5f5f5}
+    .card{background:white;padding:20px;border-radius:15px;max-width:400px;margin:auto;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+    h1{color:#25D366}
+    .price{background:#25D366;color:white;padding:10px;border-radius:10px;margin:10px 0}
+    .btn{display:block;background:#25D366;color:white;padding:15px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:15px;font-size:18px}
   </style>
 </head>
 <body>
-  <h1>Welcome to TechPlug.ng 🚀</h1>
-  <p>Your #1 place for all network codes in Nigeria</p>
-  
   <div class="card">
-    <h2>MTN Codes</h2>
-    <p>Check Balance: *556#</p>
-    <p>Buy Data: *312#</p>
+    <h1>ELIJAH | TECHPLUGSIES</h1>
+    <p>I Build Websites & WhatsApp Stores for Companies in Lagos</p>
+    
+    <div class="price">1. Business Website: ₦50,000</div>
+    <div class="price">2. WhatsApp Catalog Store: ₦30,000</div>
+    <div class="price">3. Monthly WhatsApp Messages: ₦10,000</div>
+    
+    <p>Fast Delivery. Pay After You See Demo.</p>
+    
+    <a class="btn" href="https://wa.me/2349129657360?text=Hello%20Elijah%20I%20want%20you%20to%20build%20a%20website%20for%20my%20company">Chat Me on WhatsApp to Hire Me</a>
   </div>
-  
-  <div class="card">
-    <h2>Airtel Codes</h2>
-    <p>Check Balance: *140#</p>
-    <p>Buy Data: *312#</p>
-  </div>
-  
-  <div class="card">
-    <h2>Glo Codes</h2>
-    <p>Check Balance: *124#</p>
-    <p>Buy Data: *312#</p>
-  </div>
-  
-  <p><b>More codes coming soon! Share this site with your friends.</b></p>
 </body>
-      </html>
+</html>
