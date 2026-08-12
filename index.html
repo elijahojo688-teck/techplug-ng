@@ -1,45 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ELIJAH | TECHPLUGSIES - Websites for Lagos Businesses</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{font-family:Arial;margin:0;background:#f5f5f5;color:#333;text-align:center}
-    .header{padding:50px 20px;background:linear-gradient(135deg,#0077FF,#0055CC);color:white}
-    .logo{width:100px;height:100px;border-radius:50%;background:white;color:#0077FF;font-weight:bold;font-size:24px;margin:10px auto;border:3px solid white;line-height:100px;text-align:center;}
-    h1{font-size:28px;margin:10px 0 0}
-    .box{background:white;color:#333;margin:15px 20px;border-radius:15px;padding:25px;text-align:left;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
-    .price{font-size:24px;color:#0077FF;font-weight:bold}
-    .btn{display:block;background:#25D366;color:white;padding:18px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:20px;margin:20px}
-    .footer{padding:30px;font-size:14px;color:#777}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TECHPLUGSIES - #1 Website Agency in Lagos</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+  body{background:#050510;color:#fff;overflow-x:hidden}
+  
+  /* LOADING SCREEN WITH DRAMA */
+  #loader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#050510,#001a33);z-index:9999;display:flex;justify-content:center;align-items:center;flex-direction:column}
+  #loader .logo{font-size:3.5rem;font-weight:bold;background:linear-gradient(90deg,#00aaff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:logoDrama 2.5s ease-in-out}
+  #loader .spinner{border:5px solid #111133;border-top:5px solid #ffd700;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;margin-top:20px}
+  @keyframes logoDrama{0%{transform:scale(0) rotate(-360deg);opacity:0}60%{transform:scale(1.3) rotate(0deg)}100%{transform:scale(1) rotate(0deg);opacity:1}}
+  @keyframes spin{100%{transform:rotate(360deg)}}
+  
+  /* FLOATING STICKERS EVERYWHERE */
+  .sticker{position:absolute;font-size:3.5rem;animation:float 4s ease-in-out infinite;opacity:0.7;z-index:1}
+  .s1{top:10%;left:5%}.s2{top:25%;right:8%;animation-delay:1s}.s3{bottom:20%;left:15%;animation-delay:2s}
+  .s4{top:60%;right:5%;animation-delay:0.5s}.s5{bottom:10%;right:20%;animation-delay:1.5s}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(10deg)}}
+  
+  /* STICKY NAV WITH PLENTY BUTTONS */
+  .nav{position:fixed;top:0;width:100%;background:rgba(5,5,16,0.98);backdrop-filter:blur(10px);padding:12px;display:flex;justify-content:center;gap:10px;z-index:999;flex-wrap:wrap;border-bottom:2px solid #00aaff}
+  .nav a{color:#ffd700;text-decoration:none;font-weight:700;padding:8px 14px;border-radius:25px;font-size:0.9rem;transition:0.3s}
+  .nav a:hover{background:#00aaff;color:#000;transform:scale(1.1)}
+  
+  section{min-height:100vh;padding:120px 20px 80px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:2}
+  h1{font-size:3rem;background:linear-gradient(90deg,#00aaff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;animation:fadeInUp 1s}
+  h2{font-size:2.2rem;color:#ffd700;margin-bottom:20px}
+  p{font-size:1.2rem;color:#ccc;max-width:700px;line-height:1.9}
+  .btn{background:linear-gradient(90deg,#00aaff,#ffd700);color:#000;padding:16px 35px;border:none;border-radius:50px;font-weight:bold;font-size:1.1rem;margin:10px;cursor:pointer;text-decoration:none;display:inline-block;transition:0.3s;box-shadow:0 0 15px rgba(0,170,255,0.5)}
+  .btn:hover{transform:scale(1.15);box-shadow:0 0 30px #ffd700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;width:95%;max-width:1300px;margin-top:40px}
+  .card{background:linear-gradient(145deg,#111133,#0a0a22);border:2px solid #00aaff;border-radius:20px;padding:25px;transition:0.4s}
+  .card:hover{border-color:#ffd700;transform:translateY(-15px);box-shadow:0 15px 40px rgba(255,215,0,0.4)}
+  .gold{color:#ffd700}.blue{color:#00aaff}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+</style>
 </head>
 <body>
-  <div class="header">
-    <div class="logo">TP</div>
-    <h1>ELIJAH | TECHPLUGSIES</h1>
-    <p>I Build Websites & WhatsApp Stores for Lagos Businesses</p>
-  </div>
-  
-  <div class="box">
-    <p class="price">₦50,000</p>
-    <p><b>Business Website</b><br>Professional website delivered in 3 days.</p>
-  </div>
-  
-  <div class="box">
-    <p class="price">₦30,000</p>
-    <p><b>WhatsApp Catalog Store</b><br>Start selling online today.</p>
-  </div>
-  
-  <div class="box">
-    <p class="price">₦10,000/month</p>
-    <p><b>WhatsApp Broadcast</b><br>We send promos to your customers.</p>
-  </div>
-  
-  <a class="btn" href="https://wa.me/2349129657360?text=Hello%20Elijah%20I%20want%20a%20website">CHAT ME ON WHATSAPP</a>
-  
-  <div class="footer">
-    <p>Lagos, Nigeria</p>
-  </div>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="logo">TECHPLUGSIES</div>
+  <div class="spinner"></div>
+  <p style="color:#00aaff;margin-top:15px;font-size:1.2rem">Loading Premium Experience...</p>
+</div>
+
+<!-- FLOATING STICKERS -->
+<div class="sticker s1">🚀</div><div class="sticker s2">💻</div><div class="sticker s3">✨</div>
+<div class="sticker s4">🔥</div><div class="sticker s5">💎</div>
+
+<!-- NAV WITH 10 BUTTONS -->
+<div class="nav">
+  <a href="#home">Home</a><a href="#services">Services</a><a href="#industries">Industries</a>
+  <a href="#portfolio">Portfolio</a><a href="#pricing">Pricing</a><a href="#process">Process</a>
+  <a href="#about">About</a><a href="#testimonials">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</div>
+
+<!-- 1. HERO -->
+<section id="home"><h1>Websites That Bring <span class="gold">Customers</span> in 7 Days</h1><p>TECHPLUGSIES - The #1 Web Design Agency in Lagos. We make your business look like ₦10 Million brand.</p><a href="https://wa.me/2349129657360" class="btn">Get Free Quote</a><a href="#portfolio" class="btn">See Our Work</a></section>
+
+<!-- 2. SERVICES -->
+<section id="services" style="background:#0a0a1a"><h2>Our Premium Services</h2><div class="grid">
+<div class="card"><h3 class="blue">💼 Business Website</h3></div><div class="card"><h3 class="blue">📱 WhatsApp Store</h3></div>
+<div class="card"><h3 class="blue">🎨 Logo + Branding</h3></div><div class="card"><h3 class="blue">📈 Google SEO</h3></div>
+</div></section>
+
+<!-- 3. INDUSTRIES -->
+<section id="industries"><h2>Industries <span class="gold">We Serve</span></h2><div class="grid">
+<div class="card"><h3>🍔 Food</h3></div><div class="card"><h3>💻 Tech</h3></div><div class="card"><h3>👗 Fashion</h3></div>
+<div class="card"><h3>💇 Beauty</h3></div><div class="card"><h3>🏫 Schools</h3></div><div class="card"><h3>🏥 Health</h3></div>
+</div></section>
+
+<!-- 4. PORTFOLIO -->
+<section id="portfolio" style="background:#0a0a1a"><h2>Our Portfolio</h2><div class="grid">
+<div class="card"><h3>🍗 Restaurant</h3></div><div class="card"><h3>👗 Boutique</h3></div><div class="card"><h3>💇 Salon</h3></div>
+<div class="card"><h3>🏫 School</h3></div><div class="card"><h3>🏥 Clinic</h3></div><div class="card"><h3>🏠 Real Estate</h3></div>
+<div class="card"><h3>📱 Phone Shop</h3></div><div class="card"><h3>🎂 Bakery</h3></div><div class="card"><h3>🚗 Car Dealer</h3></div>
+</div></section>
+
+<!-- 5. PRICING -->
+<section id="pricing"><h2>Pricing Packages</h2><div class="grid">
+<div class="card"><h3 class="gold">Basic ₦30k</h3></div><div class="card"><h3 class="gold">Standard ₦50k</h3></div><div class="card"><h3 class="gold">Premium ₦100k</h3></div>
+</div></section>
+
+<!-- 6. PROCESS -->
+<section id="process" style="background:#0a0a1a"><h2>How We Work</h2><div class="grid">
+<div class="card"><h3>1. You Contact Us</h3></div><div class="card"><h3>2. We Design</h3></div><div class="card"><h3>3. We Launch</h3></div>
+</div></section>
+
+<!-- 7. ABOUT -->
+<section id="about"><h2>About TECHPLUGSIES</h2><p>We are Lagos' fastest growing web agency. 50+ businesses trust us.</p></section>
+
+<!-- 8. WHY US -->
+<section id="why" style="background:#0a0a1a"><h2>Why Choose Us</h2><div class="grid">
+<div class="card"><h3>⚡ Fast Delivery</h3></div><div class="card"><h3>💰 Affordable</h3></div><div class="card"><h3>🎯 Results</h3></div>
+</div></section>
+
+<!-- 9. TESTIMONIALS -->
+<section id="testimonials"><h2>Client Reviews</h2><div class="grid">
+<div class="card"><p>"Best designer in Lagos!"</p><p class="gold">- Tunde</p></div>
+<div class="card"><p>"My sales doubled!"</p><p class="gold">- Aisha</p></div>
+</div></section>
+
+<!-- 10. FAQ -->
+<section id="faq" style="background:#0a0a1a"><h2>FAQ</h2><div class="grid">
+<div class="card"><h3>How long?</h3><p>3-5 days</p></div><div class="card"><h3>Support?</h3><p>1 Year Free</p></div>
+</div></section>
+
+<!-- 11. BLOG TIPS -->
+<section id="blog"><h2>Free Business Tips</h2><p>We teach you how to get customers online</p></section>
+
+<!-- 12. CONTACT -->
+<section id="contact" style="background:#0a0a1a"><h2>Let's Start Your Project</h2>
+<a href="https://wa.me/2349129657360" class="btn">Chat on WhatsApp</a>
+<a href="tel:09129657360" class="btn">Call Now</a>
+</section>
+
+<script>
+  window.addEventListener('load', function(){
+    setTimeout(function(){document.getElementById('loader').style.display='none';}, 3000);
+  });
+</script>
 </body>
-        </html>
+  </html>
