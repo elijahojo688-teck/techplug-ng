@@ -3,126 +3,1181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TECHPLUGSIES - #1 Website Agency in Lagos</title>
+
+<title>TECHPLUGSIES | Digital Solutions for Modern Businesses</title>
+
+<meta name="description" content="TECHPLUGSIES creates modern websites and digital solutions for businesses, creators and organizations.">
+
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-  body{background:#050510;color:#fff;overflow-x:hidden}
-  
-  /* LOADING SCREEN WITH DRAMA */
-  #loader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#050510,#001a33);z-index:9999;display:flex;justify-content:center;align-items:center;flex-direction:column}
-  #loader .logo{font-size:3.5rem;font-weight:bold;background:linear-gradient(90deg,#00aaff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:logoDrama 2.5s ease-in-out}
-  #loader .spinner{border:5px solid #111133;border-top:5px solid #ffd700;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;margin-top:20px}
-  @keyframes logoDrama{0%{transform:scale(0) rotate(-360deg);opacity:0}60%{transform:scale(1.3) rotate(0deg)}100%{transform:scale(1) rotate(0deg);opacity:1}}
-  @keyframes spin{100%{transform:rotate(360deg)}}
-  
-  /* FLOATING STICKERS EVERYWHERE */
-  .sticker{position:absolute;font-size:3.5rem;animation:float 4s ease-in-out infinite;opacity:0.7;z-index:1}
-  .s1{top:10%;left:5%}.s2{top:25%;right:8%;animation-delay:1s}.s3{bottom:20%;left:15%;animation-delay:2s}
-  .s4{top:60%;right:5%;animation-delay:0.5s}.s5{bottom:10%;right:20%;animation-delay:1.5s}
-  @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(10deg)}}
-  
-  /* STICKY NAV WITH PLENTY BUTTONS */
-  .nav{position:fixed;top:0;width:100%;background:rgba(5,5,16,0.98);backdrop-filter:blur(10px);padding:12px;display:flex;justify-content:center;gap:10px;z-index:999;flex-wrap:wrap;border-bottom:2px solid #00aaff}
-  .nav a{color:#ffd700;text-decoration:none;font-weight:700;padding:8px 14px;border-radius:25px;font-size:0.9rem;transition:0.3s}
-  .nav a:hover{background:#00aaff;color:#000;transform:scale(1.1)}
-  
-  section{min-height:100vh;padding:120px 20px 80px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:2}
-  h1{font-size:3rem;background:linear-gradient(90deg,#00aaff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;animation:fadeInUp 1s}
-  h2{font-size:2.2rem;color:#ffd700;margin-bottom:20px}
-  p{font-size:1.2rem;color:#ccc;max-width:700px;line-height:1.9}
-  .btn{background:linear-gradient(90deg,#00aaff,#ffd700);color:#000;padding:16px 35px;border:none;border-radius:50px;font-weight:bold;font-size:1.1rem;margin:10px;cursor:pointer;text-decoration:none;display:inline-block;transition:0.3s;box-shadow:0 0 15px rgba(0,170,255,0.5)}
-  .btn:hover{transform:scale(1.15);box-shadow:0 0 30px #ffd700}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;width:95%;max-width:1300px;margin-top:40px}
-  .card{background:linear-gradient(145deg,#111133,#0a0a22);border:2px solid #00aaff;border-radius:20px;padding:25px;transition:0.4s}
-  .card:hover{border-color:#ffd700;transform:translateY(-15px);box-shadow:0 15px 40px rgba(255,215,0,0.4)}
-  .gold{color:#ffd700}.blue{color:#00aaff}
-  @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#07111f;
+  color:#fff;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+#loader{
+  position:fixed;
+  inset:0;
+  background:#06101d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:99999;
+  transition:opacity .8s ease, visibility .8s ease;
+}
+
+#loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader-logo{
+  font-size:2.4rem;
+  font-weight:900;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#24a8ff,#6ce5ff,#ffffff);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:logoDrama 1.8s ease-in-out;
+}
+
+.loader-line{
+  width:160px;
+  height:3px;
+  background:#152b42;
+  margin-top:20px;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.loader-line span{
+  display:block;
+  height:100%;
+  width:0;
+  background:#25a9ff;
+  animation:loading 2.2s forwards;
+}
+
+@keyframes logoDrama{
+  0%{
+    transform:scale(.2) rotate(-25deg);
+    opacity:0;
+  }
+
+  35%{
+    transform:scale(1.15) rotate(8deg);
+    opacity:1;
+  }
+
+  55%{
+    transform:rotate(-6deg);
+  }
+
+  75%{
+    transform:rotate(3deg);
+  }
+
+  100%{
+    transform:scale(1) rotate(0);
+  }
+}
+
+@keyframes loading{
+  to{
+    width:100%;
+  }
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:72px;
+  background:rgba(7,17,31,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  z-index:5000;
+}
+
+.logo{
+  font-size:1.35rem;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#27a9ff;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+
+.nav-links a{
+  color:#dce8f4;
+  text-decoration:none;
+  font-size:.95rem;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:#2eafff;
+}
+
+.nav-button{
+  background:#25a9ff;
+  color:#00101e !important;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:800;
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:28px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:130px 6% 80px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:#008cff;
+  opacity:.08;
+  filter:blur(100px);
+  border-radius:50%;
+  top:5%;
+  right:-150px;
+}
+
+.hero-content{
+  max-width:760px;
+  position:relative;
+  z-index:2;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid rgba(39,169,255,.35);
+  background:rgba(39,169,255,.08);
+  color:#5fc3ff;
+  border-radius:30px;
+  font-size:.85rem;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:clamp(2.7rem,8vw,5.6rem);
+  line-height:1.03;
+  letter-spacing:-3px;
+  margin-bottom:24px;
+}
+
+.hero h1 span{
+  color:#29aaff;
+}
+
+.hero p{
+  color:#aebdcb;
+  font-size:1.1rem;
+  max-width:650px;
+  margin-bottom:32px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 23px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:800;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:#27a9ff;
+  color:#00101c;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(39,169,255,.25);
+}
+
+.btn-outline{
+  border:1px solid #29445c;
+  color:white;
+  background:#0b1a2b;
+}
+
+.btn-outline:hover{
+  border-color:#27a9ff;
+}
+
+/* =========================
+   TRUST BAR
+========================= */
+
+.trust{
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:24px 6%;
+  background:#091625;
+}
+
+.trust-inner{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  text-align:center;
+}
+
+.trust-item strong{
+  display:block;
+  font-size:1.5rem;
+  color:#fff;
+}
+
+.trust-item span{
+  color:#8497aa;
+  font-size:.85rem;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section{
+  padding:100px 6%;
+}
+
+.section-container{
+  max-width:1150px;
+  margin:auto;
+}
+
+.section-heading{
+  max-width:700px;
+  margin-bottom:50px;
+}
+
+.section-heading small{
+  color:#28aaff;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.section-heading h2{
+  font-size:clamp(2rem,5vw,3.4rem);
+  margin:10px 0 15px;
+}
+
+.section-heading p{
+  color:#91a4b6;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.service{
+  background:#0b1a2b;
+  border:1px solid #172d43;
+  padding:30px;
+  border-radius:16px;
+  transition:.35s;
+}
+
+.service:hover{
+  transform:translateY(-7px);
+  border-color:#27a9ff;
+}
+
+.service-icon{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#102a42;
+  color:#32b0ff;
+  font-size:1.4rem;
+  margin-bottom:22px;
+}
+
+.service h3{
+  margin-bottom:10px;
+}
+
+.service p{
+  color:#91a4b6;
+  font-size:.95rem;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+  background:#091625;
+}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.step{
+  border:1px solid #172d43;
+  background:#0b1a2b;
+  border-radius:15px;
+  padding:25px;
+}
+
+.step-number{
+  color:#27a9ff;
+  font-weight:900;
+  font-size:1.8rem;
+}
+
+.step h3{
+  margin:12px 0 8px;
+}
+
+.step p{
+  color:#8ea1b4;
+  font-size:.9rem;
+}
+
+/* =========================
+   WHY US
+========================= */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.why-card{
+  background:linear-gradient(145deg,#0c1c2e,#091522);
+  border:1px solid #172d43;
+  padding:35px;
+  border-radius:18px;
+}
+
+.why-card ul{
+  list-style:none;
+  margin-top:20px;
+}
+
+.why-card li{
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  color:#a8b8c8;
+}
+
+.why-card li::before{
+  content:"✓";
+  color:#27a9ff;
+  font-weight:bold;
+  margin-right:10px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+  background:#091625;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.price-card{
+  background:#0b1a2b;
+  border:1px solid #172d43;
+  padding:30px;
+  border-radius:18px;
+  position:relative;
+}
+
+.price-card.featured{
+  border:1px solid #27a9ff;
+  transform:translateY(-8px);
+}
+
+.popular{
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:#27a9ff;
+  color:#00101c;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:.7rem;
+  font-weight:900;
+}
+
+.price{
+  font-size:2.3rem;
+  font-weight:900;
+  margin:15px 0;
+}
+
+.price-card p{
+  color:#8fa2b4;
+}
+
+.price-card ul{
+  list-style:none;
+  margin:20px 0;
+}
+
+.price-card li{
+  margin:10px 0;
+  color:#c2cfdb;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.project{
+  min-height:220px;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#102b43,#0b1828);
+  border:1px solid #1b354c;
+  display:flex;
+  align-items:flex-end;
+}
+
+.project-content{
+  width:100%;
+  padding:25px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
+}
+
+.project small{
+  color:#35b1ff;
+}
+
+.project h3{
+  margin-top:5px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:90px 6%;
+}
+
+.cta-box{
+  max-width:1100px;
+  margin:auto;
+  background:linear-gradient(135deg,#0c2942,#0b1726);
+  border:1px solid #1c4969;
+  border-radius:24px;
+  padding:60px 35px;
+  text-align:center;
+}
+
+.cta-box h2{
+  font-size:clamp(2rem,5vw,3.5rem);
+  margin-bottom:15px;
+}
+
+.cta-box p{
+  color:#9db0c0;
+  max-width:650px;
+  margin:0 auto 25px;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
+details{
+  background:#0b1a2b;
+  border:1px solid #172d43;
+  border-radius:12px;
+  padding:18px 20px;
+  margin-bottom:12px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:800;
+}
+
+details p{
+  color:#91a4b6;
+  padding-top:15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#050d17;
+  border-top:1px solid #14283b;
+  padding:50px 6% 25px;
+}
+
+.footer-grid{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+
+footer p{
+  color:#8194a7;
+  margin-top:12px;
+  max-width:450px;
+}
+
+footer h4{
+  margin-bottom:15px;
+}
+
+footer a{
+  display:block;
+  color:#8fa2b4;
+  text-decoration:none;
+  margin:8px 0;
+}
+
+footer a:hover{
+  color:#27a9ff;
+}
+
+.copyright{
+  max-width:1150px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:#64788b;
+  font-size:.85rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    right:5%;
+    width:90%;
+    background:#0a1929;
+    border:1px solid #1d3a52;
+    border-radius:12px;
+    padding:15px;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:12px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .trust-inner{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .services-grid,
+  .pricing-grid,
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+
+  .process-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .price-card.featured{
+    transform:none;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero h1{
+    letter-spacing:-1.5px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .process-grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:75px 5%;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<!-- LOADING SCREEN -->
+<!-- LOADER -->
 <div id="loader">
-  <div class="logo">TECHPLUGSIES</div>
-  <div class="spinner"></div>
-  <p style="color:#00aaff;margin-top:15px;font-size:1.2rem">Loading Premium Experience...</p>
+  <div class="loader-logo">TECHPLUGSIES</div>
+  <div class="loader-line"><span></span></div>
 </div>
 
-<!-- FLOATING STICKERS -->
-<div class="sticker s1">🚀</div><div class="sticker s2">💻</div><div class="sticker s3">✨</div>
-<div class="sticker s4">🔥</div><div class="sticker s5">💎</div>
+<!-- NAVIGATION -->
+<header class="navbar">
 
-<!-- NAV WITH 10 BUTTONS -->
-<div class="nav">
-  <a href="#home">Home</a><a href="#services">Services</a><a href="#industries">Industries</a>
-  <a href="#portfolio">Portfolio</a><a href="#pricing">Pricing</a><a href="#process">Process</a>
-  <a href="#about">About</a><a href="#testimonials">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-</div>
+  <div class="logo">
+    TECH<span>PLUGSIES</span>
+  </div>
 
-<!-- 1. HERO -->
-<section id="home"><h1>Websites That Bring <span class="gold">Customers</span> in 7 Days</h1><p>TECHPLUGSIES - The #1 Web Design Agency in Lagos. We make your business look like ₦10 Million brand.</p><a href="https://wa.me/2349129657360" class="btn">Get Free Quote</a><a href="#portfolio" class="btn">See Our Work</a></section>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<!-- 2. SERVICES -->
-<section id="services" style="background:#0a0a1a"><h2>Our Premium Services</h2><div class="grid">
-<div class="card"><h3 class="blue">💼 Business Website</h3></div><div class="card"><h3 class="blue">📱 WhatsApp Store</h3></div>
-<div class="card"><h3 class="blue">🎨 Logo + Branding</h3></div><div class="card"><h3 class="blue">📈 Google SEO</h3></div>
-</div></section>
+  <nav class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-button">Get Started</a>
+  </nav>
 
-<!-- 3. INDUSTRIES -->
-<section id="industries"><h2>Industries <span class="gold">We Serve</span></h2><div class="grid">
-<div class="card"><h3>🍔 Food</h3></div><div class="card"><h3>💻 Tech</h3></div><div class="card"><h3>👗 Fashion</h3></div>
-<div class="card"><h3>💇 Beauty</h3></div><div class="card"><h3>🏫 Schools</h3></div><div class="card"><h3>🏥 Health</h3></div>
-</div></section>
+</header>
 
-<!-- 4. PORTFOLIO -->
-<section id="portfolio" style="background:#0a0a1a"><h2>Our Portfolio</h2><div class="grid">
-<div class="card"><h3>🍗 Restaurant</h3></div><div class="card"><h3>👗 Boutique</h3></div><div class="card"><h3>💇 Salon</h3></div>
-<div class="card"><h3>🏫 School</h3></div><div class="card"><h3>🏥 Clinic</h3></div><div class="card"><h3>🏠 Real Estate</h3></div>
-<div class="card"><h3>📱 Phone Shop</h3></div><div class="card"><h3>🎂 Bakery</h3></div><div class="card"><h3>🚗 Car Dealer</h3></div>
-</div></section>
 
-<!-- 5. PRICING -->
-<section id="pricing"><h2>Pricing Packages</h2><div class="grid">
-<div class="card"><h3 class="gold">Basic ₦30k</h3></div><div class="card"><h3 class="gold">Standard ₦50k</h3></div><div class="card"><h3 class="gold">Premium ₦100k</h3></div>
-</div></section>
+<!-- HERO -->
+<section class="hero">
 
-<!-- 6. PROCESS -->
-<section id="process" style="background:#0a0a1a"><h2>How We Work</h2><div class="grid">
-<div class="card"><h3>1. You Contact Us</h3></div><div class="card"><h3>2. We Design</h3></div><div class="card"><h3>3. We Launch</h3></div>
-</div></section>
+  <div class="hero-content">
 
-<!-- 7. ABOUT -->
-<section id="about"><h2>About TECHPLUGSIES</h2><p>We are Lagos' fastest growing web agency. 50+ businesses trust us.</p></section>
+    <div class="badge">
+      ● DIGITAL SOLUTIONS FOR MODERN BUSINESSES
+    </div>
 
-<!-- 8. WHY US -->
-<section id="why" style="background:#0a0a1a"><h2>Why Choose Us</h2><div class="grid">
-<div class="card"><h3>⚡ Fast Delivery</h3></div><div class="card"><h3>💰 Affordable</h3></div><div class="card"><h3>🎯 Results</h3></div>
-</div></section>
+    <h1>
+      We build websites that make your business look <span>credible.</span>
+    </h1>
 
-<!-- 9. TESTIMONIALS -->
-<section id="testimonials"><h2>Client Reviews</h2><div class="grid">
-<div class="card"><p>"Best designer in Lagos!"</p><p class="gold">- Tunde</p></div>
-<div class="card"><p>"My sales doubled!"</p><p class="gold">- Aisha</p></div>
-</div></section>
+    <p>
+      TECHPLUGSIES helps businesses, creators and organizations
+      establish a professional online presence with modern,
+      responsive and conversion-focused websites.
+    </p>
 
-<!-- 10. FAQ -->
-<section id="faq" style="background:#0a0a1a"><h2>FAQ</h2><div class="grid">
-<div class="card"><h3>How long?</h3><p>3-5 days</p></div><div class="card"><h3>Support?</h3><p>1 Year Free</p></div>
-</div></section>
+    <div class="hero-buttons">
 
-<!-- 11. BLOG TIPS -->
-<section id="blog"><h2>Free Business Tips</h2><p>We teach you how to get customers online</p></section>
+      <a href="#contact" class="btn btn-primary">
+        Start Your Project →
+      </a>
 
-<!-- 12. CONTACT -->
-<section id="contact" style="background:#0a0a1a"><h2>Let's Start Your Project</h2>
-<a href="https://wa.me/2349129657360" class="btn">Chat on WhatsApp</a>
-<a href="tel:09129657360" class="btn">Call Now</a>
+      <a href="#portfolio" class="btn btn-outline">
+        View Our Work
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
-<script>
-  window.addEventListener('load', function(){
-    setTimeout(function(){document.getElementById('loader').style.display='none';}, 3000);
-  });
-</script>
-</body>
-  </html>
+
+<!-- TRUST -->
+<div class="trust">
+
+  <div class="trust-inner">
+
+    <div class="trust-item">
+      <strong>100%</strong>
+      <span>Mobile Friendly</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>3–7</strong>
+      <span>Days Typical Delivery</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>24/7</strong>
+      <span>Online Presence</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>SEO</strong>
+      <span>Ready Websites</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- SERVICES -->
+<section id="services">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+      <small>WHAT WE DO</small>
+      <h2>Digital solutions built around your goals.</h2>
+      <p>
+        From simple business websites to complete digital platforms,
+        we create experiences designed to help your brand stand out.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="service-icon">⌘</div>
+        <h3>Business Websites</h3>
+        <p>
+          Professional websites that explain what your business does
+          and make it easy for customers to contact you.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">▣</div>
+        <h3>Landing Pages</h3>
+        <p>
+          Focused pages designed to present an offer, service,
+          product or campaign clearly.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">◈</div>
+        <h3>Online Stores</h3>
+        <p>
+          Modern product pages and shopping experiences for
+          businesses ready to sell online.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">◎</div>
+        <h3>Website Redesign</h3>
+        <p>
+          Turn an outdated website into a cleaner and more
+          professional digital experience.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">↗</div>
+        <h3>SEO Setup</h3>
+        <p>
+          Search-engine-friendly structure and content foundations
+          to help your website become discoverable.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">⚡</div>
+        <h3>Performance</h3>
+        <p>
+          Lightweight websites designed to load smoothly across
+          phones, tablets and computers.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process" id="process">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+      <small>OUR PROCESS</small>
+      <h2>From idea to website.</h2>
+      <p>
+        A simple process that keeps your project clear from beginning
+        to launch.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Tell Us</h3>
+        <p>
+          Tell us about your business, goals and the website you need.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>We Plan</h3>
+        <p>
+          We structure the pages, content and features your website needs.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>We Build</h3>
+        <p>
+          Your website is designed and developed for mobile and desktop.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Launch</h3>
+        <p>
+          After review, your website is prepared for customers to visit.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY US -->
+<section>
+
+  <div class="section-container">
+
+    <div class="why-grid">
+
+      <div class="why-card">
+
+        <div class="section-heading">
+          <small>WHY TECHPLUGSIES</small>
+          <h2>Built for people who take their brand seriously.</h2>
+        </div>
+
+        <p>
+          Your website is often the first place a potential customer
+          checks before deciding whether to trust a business.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <h3>What you get</h3>
+
+        <ul>
+          <li>Professional visual design</li>
+          <li>Mobile responsive layout</li>
+          <li>Clear calls-to-action</li>
+          <li>Fast-loading structure</li>
+          <li>Contact and WhatsApp integration</li>
+          <li>SEO-ready foundations</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+      <small>PRICING</small>
+      <h2>Choose the right starting point.</h2>
+      <p>
+        Simple packages for businesses at different stages.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+
+        <h3>Starter</h3>
+
+        <div class="price">₦30k</div>
+
+        <p>For individuals and small businesses.</p>
+
+        <ul>
+          <li>✓ One-page website</li>
+          <li>✓ Mobile responsive</li>
+          <li>✓ WhatsApp button</li>
+          <li>✓ Contact section</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline">
+          Choose Starter
+        </a>
+
+      </div>
+
+
+      <div class="price-card featured">
+
+        <div class="popular">POPULAR</div>
+
+        <h3>Professional</h3>
+
+        <div class="price">₦50k</div>
+
+        <p>For businesses that need more room to grow.</p>
+
+        <ul>
+          <li>✓ Up to 5 pages</li>
+          <li>✓ Professional design</li>
+          <li>✓ Basic SEO setup</li>
+          <li>✓ WhatsApp integration</li>
+          <li>✓ Contact forms</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">
+          Choose Professional
+        </a>
+
+      </div>
+
+
+      <div class="price-card">
+
+        <h3>Premium</h3>
+
+        <div class="price">₦100k</div>
+
+        <p>For businesses needing a larger digital presence.</p>
+
+        <ul>
+          <li>✓ Full custom website</li>
+          <li>✓ Advanced sections</li>
+          <li>✓ Store functionality</li>
+          <li>✓ SEO foundations</li>
+          <li>✓ Support package</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline">
+          Choose Premium
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+      <small>SELECTED WORK</small>
+      <h2>Web experiences we're building.</h2>
+      <p>
+        A growing collection of website concepts and projects.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="project">
+        <div class="project-content">
+          <small>BUSINESS</small>
+          <h3>Restaurant Website</h3>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-content">
+          <small>COMMERCE</small>
+          <h3>Fashion Store</h3>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-content">
+          <small>ORGANIZATION</small>
+          <h3>School Website</h3>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-content">
+          <small>HEALTH</small>
+          <h3>Health Service</h3>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-content">
+          <small>PROPERTY</small>
+          <h3>Real Estate</h3>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-content">
+          <small>CREATIVE</small>
+          <h3>Personal Brand</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta" id="contact">
+
+  <div class="cta-box">
+
+    <h2>Ready to take your business online?</h2>
+
+    <p>
+      Tell us what you want to build and let's discuss the best
+      website solution for your business.
+    </p>
+
+    <div class="hero-buttons" style="justify-content:center;">
+
+      <a
+        href="https://wa.me/2349129657360"
+        class="btn btn-primary">
+        Chat on WhatsApp →
+      </a>
+
+      <a
+        href="tel:09129657360"
+ 
